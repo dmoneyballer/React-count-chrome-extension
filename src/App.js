@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 import logo from './logo.svg';
 import './App.css';
-
 class App extends Component {
   constructor(props){
     super(props);
@@ -20,6 +19,12 @@ class App extends Component {
     this.halfCount = () => {
       this.setState({ count: this.state.count / 2})
     }
+    this.squareRoot = () =>{
+      this.setState({ count: Math.sqrt(this.state.count).toFixed(4)})
+    }
+    this.reset = () => {
+      this.setState({ count: 0})
+    }
   }
 
   render() {
@@ -36,6 +41,8 @@ class App extends Component {
           <button onClick={this.decCount}>Decrease Count</button>
           <button onClick={this.doubleCount}>Double Count</button>
           <button onClick={this.halfCount}>Half Count</button>
+          <button onClick={this.squareRoot}>Square root of Count</button>
+          <button onClick={this.reset}>Reset Count</button>
           <h1>{this.state.count}</h1>
 
         </header>
