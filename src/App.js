@@ -8,8 +8,17 @@ class App extends Component {
     this.state = {
       count: 0
     }
-    this.handleClick = () => {
+    this.incCount = () => {
       this.setState({ count: this.state.count + 1})
+    }
+    this.decCount = () => {
+      this.setState({ count: this.state.count - 1})
+    }
+    this.doubleCount = () => {
+      this.setState({ count: this.state.count * 2})
+    }
+    this.halfCount = () => {
+      this.setState({ count: this.state.count / 2})
     }
   }
 
@@ -23,8 +32,12 @@ class App extends Component {
             This is the React Chrome Extension we've all been waiting for
             A button counter
           </p>
-          <button onClick={this.handleClick}>Add to Count</button>
+          <button onClick={this.incCount}>Add to Count</button>
+          <button onClick={this.decCount}>Decrease Count</button>
+          <button onClick={this.doubleCount}>Double Count</button>
+          <button onClick={this.halfCount}>Half Count</button>
           <h1>{this.state.count}</h1>
+
         </header>
       </div>
     );
